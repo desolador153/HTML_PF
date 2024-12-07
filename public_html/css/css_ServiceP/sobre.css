@@ -1,0 +1,220 @@
+#sobre {
+  position: relative;
+  padding: 65px 10%;
+  color: var(--cor-branco);
+}
+
+#sobre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../..//images/images_SP/SP_EscudoFond.png') no-repeat center center;
+  background-size: cover;
+  filter: brightness(20%); /* Reduce el brillo para darle opacidad */
+  z-index: -1;
+}
+
+.tituloSection {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  max-width: calc(50% - 2.5rem);
+  word-wrap: break-word;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+}
+
+.wrapper {
+  --pading-wrapper: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.esquerda,
+.direita {
+  padding: var(--pading-wrapper) 0;
+  flex: 1;
+  margin: auto auto;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quadrado {
+   width: 100px; /* Ajusta según tus necesidades */
+   aspect-ratio: 1; /* Mantén las proporciones */
+   display: grid;
+   place-items: center;
+   background: var(--cor-secundaria);
+   border-radius: 5px;
+
+  .quadrado:hover {
+  background: var(--cor-secundaria-hover, #ccc); /* Hover dinámico */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  transform: scale(1.05); /* Efecto de crecimiento */
+}
+  & svg {
+        width: 90%;
+    height: auto; /* Auto para respetar las proporciones */
+    fill: var(--cor-branco); /* Para aplicar color al SVG */
+  }
+
+  &:hover,
+  &:focus,
+  &.ativado {
+     stroke: var(--cor-preto);
+  }
+
+  &:hover svg,
+  &:focus svg {
+    stroke: var(--cor-preto);
+  }
+
+  &:active {
+    scale: 0.9; 
+  }
+
+  &.ativado svg {
+    stroke: var(--cor-preto);
+  }
+
+}
+
+.separador {
+  width: 5px;
+  background: var(--cor-branco);
+  margin: 0 2rem;
+  border-radius: 5px;
+}
+
+.paragrafo {
+  position: relative;
+  background: var(--cor-secundaria);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.paragrafos {
+  display: none;
+}
+
+.paragrafos.ativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paragrafos.ativo > * {
+  width: 100%;
+  flex-grow: 1;
+  max-width: none;
+  padding: 1rem 2rem;
+  border: 0;
+}
+
+.paragrafo::before {
+  font-family: "Days One", sans-serif;
+  content: "\201C";
+  font-size: 5rem;
+  color: var(--cor-branco);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-35%);
+  filter: drop-shadow(0 0 1.5px white);
+}
+
+.sobreBotao {
+  background: var(--cor-secundaria);
+  color: var(--cor-branco);
+
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 300ms;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & i {
+    transition: 300ms;
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--cor-branco);
+    color: var(--cor-preto);
+    border-radius: 0;
+    & i {
+      transform: translateX(10px);
+      scale: 1.3;
+    }
+  }
+
+  &:active {
+    border-radius: 50px;
+  }
+}
+
+@media screen and (max-width: 768px), (max-width: 1024px) {
+  #sobre {
+    padding: 65px 5%;
+  }
+
+  .tituloSection {
+    max-width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    --pading-wrapper: 1rem;
+  }
+
+  .esquerda,
+  .direita {
+    padding: var(--pading-wrapper);
+  }
+
+  .esquerda {
+    flex-direction: row;
+    overflow: auto;
+  }
+
+  .esquerda .opcao {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quadrado {
+    width: 80px;
+  }
+
+  .opcaoTitulo {
+    font-size: 1rem;
+  }
+
+  .separador {
+    display: none;
+  }
+
+  .paragrafos.ativo > * {
+    width: 90%;
+    max-width: none;
+    padding: 1rem 2rem;
+    border: 0;
+  }
+}

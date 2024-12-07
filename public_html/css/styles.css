@@ -1,0 +1,241 @@
+
+/* 
+    Created on : 14/09/2024, 12:03:12 AM
+    Author     : Oscar
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bomberos.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza */
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+
+/* Estilos para el encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+
+/* Estilos del formulario */
+.recruitment-form {
+    display: grid;
+    gap: 16px;
+}
+
+/* Estilos del fieldset */
+fieldset {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    font-size: 20px;
+    color: #007bff;
+}
+
+/* Estilos de la cuadrícula del formulario */
+.form-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Estilos de los elementos de formulario */
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Animación de la carta */
+.letter-image {
+    position: absolute;
+    top: 60%; /* Coloca la carta cerca de la mitad vertical de la pantalla, puedes ajustar según tu diseño */
+    left: 50%; /* Centra la carta horizontalmente */
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%); /* Ajusta la carta para que se mantenga centrada exactamente */
+    cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa sobre la carta */
+}
+
+.animated-mail {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    transition: .4s; /* Establece la duración de la animación de transición */
+}
+
+.animated-mail .body {
+    position: absolute;
+    bottom: 0;
+    width: 0; /* Inicialmente la carta no tiene cuerpo visible */
+    height: 0; /* El cuerpo está colapsado hasta que se active la animación */
+    border-style: solid;
+    border-width: 0 0 100px 200px; /* Crea la parte inferior de la carta con bordes */
+    border-color: transparent transparent #e95f55 transparent; /* Da color al borde inferior de la carta */
+    z-index: 2; /* Asegura que el cuerpo quede por encima de otras capas */
+}
+
+.animated-mail .top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0; /* Inicialmente el pliegue superior está oculto */
+    height: 0; /* Similar al pliegue superior, está colapsado */
+    border-style: solid;
+    border-width: 50px 100px 0 100px; /* Crea el pliegue superior con bordes */
+    transform-origin: 50% 0%; /* Hace que el pliegue se abra desde el centro superior */
+    transition: transform .4s .4s, z-index .2s .4s; /* Controla la animación de apertura con retraso */
+    border-color: #cf4a43 transparent transparent transparent; /* Color del pliegue superior */
+    z-index: 2; /* El pliegue debe estar por encima del cuerpo */
+}
+
+.animated-mail .back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #cf4a43; /* Da color al pliegue trasero */
+    z-index: 0; /* El pliegue trasero debe quedar detrás de otros elementos */
+}
+
+.animated-mail .left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0; /* Inicialmente el pliegue izquierdo está oculto */
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px; /* Crea el pliegue izquierdo con bordes */
+    border-color: transparent transparent transparent #e15349; /* Color del pliegue izquierdo */
+    z-index: 2; /* Coloca este pliegue por encima del cuerpo */
+}
+
+.animated-mail .letter {
+    left: 20px;
+    bottom: 0px;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: white; /* Color de fondo de la carta */
+    z-index: 1; /* La carta debe estar por encima del pliegue trasero */
+    overflow: hidden; /* Oculta cualquier contenido que sobrepase el tamaño de la carta */
+    transition: .4s .2s; /* Controla la animación de la carta */
+}
+
+.animated-mail .letter .letter-border {
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e, /* Color del borde de la carta */
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+    );
+}
+
+.animated-mail .letter .letter-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 40%;
+    background: #cb5a5e; /* Color del título de la carta */
+}
+
+.animated-mail .letter .letter-context {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 20%;
+    background: #cb5a5e; /* Color del contenido de la carta */
+}
+
+.animated-mail .letter .letter-stamp {
+    margin-top: 30px;
+    margin-left: 120px;
+    border-radius: 100%; /* Hace el sello circular */
+    height: 30px;
+    width: 30px;
+    background: #cb5a5e; /* Color del sello */
+    opacity: 0.3; /* Hace el sello un poco transparente */
+}
+
+.animated-mail .shadow {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 400px;
+    height: 30px;
+    transition: .4s; /* Controla la animación del sombra */
+    transform: translateX(-50%); /* Centra la sombra horizontalmente */
+    background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
+}
+
+.letter-image:hover .animated-mail {
+    transform: translateY(50px); /* Desplaza la carta hacia abajo cuando se pasa el ratón sobre ella */
+}
+
+.letter-image:hover .animated-mail .top-fold {
+    transform: rotateX(180deg); /* Rota el pliegue superior de la carta cuando se pasa el ratón */
+}
+
+.letter-image:hover .animated-mail .letter {
+    height: 180px; /* Aumenta la altura de la carta cuando se pasa el ratón sobre ella */
+}
+
+.letter-image:hover .shadow {
+    width: 250px; /* Aumenta el tamaño de la sombra cuando se pasa el ratón */
+}

@@ -1,0 +1,147 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 06/12/2024, 11:52:41 PM
+    Author     : Oscar
+*/
+
+
+.carrosselPrimario {
+  background: #fff;
+}
+
+.carrosselPrimario-celula {
+  padding: 10px;
+   width: 100vw;  /* Asegúrate de que ocupa todo el ancho */
+  height: 100vh;
+  background-image:url(../images/bomberosLeyendo.jpg);
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Asegura que la imagen cubra el área */
+  overflow: hidden;
+    position: relative; 
+}
+.carrosselPrimario-celula::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)); /* Gradiente */
+  opacity: 0.7; /* Opacidad para dar el efecto de sombreado */
+  z-index: -1; /* Asegura que el gradiente esté por encima de la imagen */
+}
+
+
+.carrosselPrimario .flickity-page-dots {
+  bottom: 30px;
+}
+
+.carrosselPrimario .flickity-page-dots .dot {
+  height: 4px;
+  width: 40%;
+  margin: 0;
+  border-radius: 10px;
+  transition: 200ms;
+  background: black;
+}
+
+.carrosselPrimario .dot.is-selected {
+  background: var(--cor-branco);
+  height: 6px;
+}
+
+.carrosselPrimario-celula {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  overflow: hidden;
+}
+
+.carrosselPrimario-titulo {    /*El titulo se ubica sobre las imagenes del carrousel*/
+  font-size: 5rem;
+  color: var(--cor-branco);
+}
+
+.carrosselPrimario-descricao {
+  font-size: 1.5rem;
+  color: var(--cor-branco);
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0;
+}
+
+.carrosselPrimario-button {
+  background: var(--cor-secundaria);
+  color: var(--cor-branco);
+  height: 30px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  transition: 300ms;
+  & i{
+    transition: 200ms;
+  }
+  &:hover {
+    background: var(--cor-branco);
+    color: var(--cor-secundaria);
+    border-radius: 50px;
+    & i {
+      transform: translateX(5px);
+    }
+  }
+}
+
+@keyframes textPop {    /*el texto aparece con una transicion y se desplaza hacia la derecha*/
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide 1 */
+.carrosselPrimario-celula.a {
+  background-image: url(../images/carroBombero.jpg);  /* Imagen para la primera pantalla */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;  /* Asegura que ocupe todo el ancho de la pantalla */
+  height: 100vh; /* Asegura que ocupe todo el alto de la pantalla */
+  position: relative;
+}
+
+
+/* animacion para ver primero el slider */
+.a .carrosselPrimario-titulo {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) forwards;
+}
+
+.a .carrosselPrimario-descricao {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) 0.2s forwards;
+}
+
+.a .carrosselPrimario-button {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) 0.6s forwards;
+}
+
+
+

@@ -1,0 +1,49 @@
+:root {
+  --cor-branco: #fdfdf5;
+  --cor-preto: #1a1a1a;
+  --cor-primaria: #193445;
+  --cor-secundaria: #c08e30;
+  --cor-terciaria: #0D0C1D;
+  /* --cor-primaria: #013255;
+  --cor-secundaria: #FF4365;
+  --cor-terciaria: #0D0C1D; */
+}
+
+* > * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+html, body {
+ 
+
+}
+
+/* Ocultar barras de rolagem em navegadores baseados em WebKit */
+html body::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Days One", sans-serif;
+}
+
+* > *:not(h1, h2, h3, h4, h5, h6),
+button,
+a {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 2000px;
+  margin: auto;
+}

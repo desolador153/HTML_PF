@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Donación</title>
+    <link rel="stylesheet" href="css/diseño.css">
+    <script src="js/formulario_donacion.js" defer></script>
+</head>
+<body>
+    <div class="humo"></div> <!-- Contenedor para la animación de humo -->
+    <div class="form-container">
+        <h1>Dona Aquí</h1>
+        <p>Con tu donación estás ayudando a mejorar la institución de los bomberos para así salvar más vidas.</p>
+       
+        <form onsubmit="validarDonacion(event)">  
+            <div class="form-group">
+                <label for="donation-amount">Ingresa el monto a donar:</label>
+                <input type="number" id="donation-amount" name="donation-amount" required>
+            </div>
+            <button type="submit" class="donate-button">DONAR</button>
+        </form>
+    </div>
+</body>
+</html>

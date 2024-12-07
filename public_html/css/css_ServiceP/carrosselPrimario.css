@@ -1,0 +1,231 @@
+.carrosselPrimario {
+  background: #fff;
+}
+
+.carrosselPrimario-celula {
+  padding: 10px;
+   width: 100vw;  /* Asegúrate de que ocupa todo el ancho */
+  height: 100vh;
+  background-image:url(../../images/F1_ServiciosP.jpg);
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Asegura que la imagen cubra el área */
+  overflow: hidden;
+    position: relative; 
+}
+.carrosselPrimario-celula::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)); /* Gradiente */
+  opacity: 0.7; /* Opacidad para dar el efecto de sombreado */
+  z-index: -1; /* Asegura que el gradiente esté por encima de la imagen */
+}
+
+
+.carrosselPrimario .flickity-page-dots {
+  bottom: 30px;
+}
+
+.carrosselPrimario .flickity-page-dots .dot {
+  height: 4px;
+  width: 40%;
+  margin: 0;
+  border-radius: 10px;
+  transition: 200ms;
+  background: black;
+}
+
+.carrosselPrimario .dot.is-selected {
+  background: var(--cor-branco);
+  height: 6px;
+}
+
+.carrosselPrimario-celula {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  overflow: hidden;
+}
+
+.carrosselPrimario-titulo {
+  font-size: 5rem;
+  color: var(--cor-branco);
+}
+
+.carrosselPrimario-descricao {
+  font-size: 1.5rem;
+  color: var(--cor-branco);
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0;
+}
+
+.carrosselPrimario-button {
+  background: var(--cor-secundaria);
+  color: var(--cor-branco);
+  height: 30px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  transition: 300ms;
+  & i{
+    transition: 200ms;
+  }
+  &:hover {
+    background: var(--cor-branco);
+    color: var(--cor-secundaria);
+    border-radius: 50px;
+    & i {
+      transform: translateX(5px);
+    }
+  }
+}
+
+@keyframes textPop {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide 1 */
+.carrosselPrimario-celula.a {
+  background-image: url(../../images/F1_ServiciosP.jpg);  /* Imagen para la primera pantalla */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;  /* Asegura que ocupe todo el ancho de la pantalla */
+  height: 100vh; /* Asegura que ocupe todo el alto de la pantalla */
+  position: relative;
+}
+
+
+/* Animação para o primeiro slide (opcional, dependendo se você quer que o primeiro slide também tenha animação) */
+.a .carrosselPrimario-titulo {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) forwards;
+}
+
+.a .carrosselPrimario-descricao {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) 0.2s forwards;
+}
+
+.a .carrosselPrimario-button {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) 0.6s forwards;
+}
+
+
+
+
+
+@keyframes animateStroke {
+  0% {
+    stroke-dashoffset: 55;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Slide 2 */
+.carrosselPrimario-celula.b {
+  background-image: url(../..//images/images_SP/Bombero_font_proposito.png);  /* Imagen para la segunda pantalla */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  }
+.b {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.b::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--cor-primaria),
+    var(--cor-secundaria)
+  );
+  opacity: 0.1;
+}
+
+/* Nao remover por questao do grandiante e imagem de fundo */
+.b .carrosselPrimario-texto {
+  position: relative;
+  z-index: 1;
+}
+
+.b .carrosselPrimario-titulo,
+.b .carrosselPrimario-descricao,
+.b .carrosselPrimario-button {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.b.animate-once .carrosselPrimario-titulo {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) forwards;
+}
+
+.b.animate-once .carrosselPrimario-descricao {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) 0.2s forwards;
+}
+
+.b.animate-once .carrosselPrimario-button {
+  animation: textPop 0.7s cubic-bezier(0.42, 0, 0, 0.99) 0.4s forwards;
+}
+
+@media (max-width: 768px) {
+  .carrosselPrimario-celula {
+    align-items: center;
+    padding: 10% 5%;
+  }
+
+  .carrosselPrimario-titulo {
+    font-size: 1.5rem;
+  }
+
+  .carrosselPrimario-descricao {
+    font-size: 0.9rem;
+  }
+
+  .carrosselPrimario-button {
+    padding: 0 10px;
+    height: 40px;
+    width: 150px;
+    margin-top: 20px;
+  }
+
+  .logoSVG {
+    width: 200px;
+    height: 200px;
+  }
+}

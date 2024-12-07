@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noticias</title>
+    <link rel="stylesheet" href="css/style_noticias.css" />
+    <script
+      src="https://kit.fontawesome.com/7a4b62b0a4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/Noticias_script.js" defer></script>
+  </head>
+  <body>
+      <header>
+     <div class="logo"> 
+                <img src="images/Logo_edit.png" alt="logo"/>
+                
+            </div>
+            <nav>
+                <a href="index2.html" class="nav-link" >Volver a la pagina principal</a>
+                
+            </nav>
+           
+          
+          
+          
+          </header>
+    <!-- Hero Section -->
+    <section class="section1">
+    <div class="container">
+      <div class="hero">
+        <div class="hero_image">
+            <a href="url"> <img src="images/images_noticias/Noticias_1.png" alt="image principal" /></a>
+        </div>
+        <div class="hero_content">
+            <div class="tag"> 
+                <a href="https://diariocorreo.pe/edicion/arequipa/asi-se-vivio-la-segunda-procesion-del-senor-de-los-milagros-en-arequipa-video-y-fotos-noticia/" target="_blank">Mira la noticia completa Aquí</a></div>
+          <h1>Así se vivio la segunda procesión del Señor de los Milagros en Arequipa</h1>
+          <p>
+           A paso lento,  entre aplausos, llantos y una emoción inexplicable, 
+           cientos de devotos participaron en la segunda procesión del Señor de la Milagros.
+            El obispo Auxiliar de Arequipa, Raúl Chau, recordó que la imagen, un Cristo crucificado,
+            fue inmortalizada en el siglo XVIII en el cerro de Pachacamilla en Lima, 
+            por un pintor esclavo desconocido...
+          </p>
+          <button class="explore_btn"><a href="https://diariocorreo.pe/" target="_blank"> Mira mas noticias aquí</a></button>
+        </div>
+      </div>
+         </div>
+        </section>
+     <br>
+      <br>
+      <section class="features">
+        <div class="feature">
+            <a href="https://diarioelpueblo.com.pe/index.php/2024/10/17/bomberos-voluntarios-recibiran-una-donacion-de-mas-de-170-mil-soles/"> <img src="images/images_noticias/Noticias_2.png" alt="" /></a>
+          <div class="feature_content">
+            <h3>Bomberos Voluntarios</h3>
+            Bomberos Voluntarios recibirán una donación de más de 170 mil soles.
+          </div>
+        </div>
+        <div class="feature">
+            <a href="https://diariocorreo.pe/peru/sos-hay-33-incendios-forestales-activos-en-peru-cusco-cajamarca-dina-boluarte-noticia/" target="_blank"> <img src="images/images_noticias/Noticioas_3.png" alt="" /></a>
+          <div class="feature_content">
+            <h3>SOS: Hay 33 incendios forestales activos en Perú</h3>
+            Declaran en emergencia a regiones Amazonas, San Martín y Ucayali por incendios forestales.
+          </div>
+        </div>
+        <div class="feature">
+            <a href="https://diariocorreo.pe/edicion/arequipa/advierten-el-peligro-de-fuego-en-almacenes-y-no-hay-plan-contra-incendios-en-arequipa-noticia/"> <img src="images/images_noticias/Noticias_4.png" alt="" /></a>
+          <div class="feature_content">
+            <h3>Advierten el peligro de fuego en almacenes y no hay plan contra incendios en Arequipa</h3>
+            Brigadier de los bomberos pide a municipios mayor fiscalización a locales comerciales de la ciudad.
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <div class="menu">
+        <div class="tag">
+            <a href="url">NOTICIAS INTERNACIONALES</a>    
+        </div>
+        <h2>Explora las diversas noticias que hemos seleccionado para que puedas acceder a estas.</h2>
+        <br>
+
+        <div class="grid">
+          <div class="item1">
+              <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_1.png"
+              alt="image 1"
+            /></a>
+          </div>
+          <div class="item2">
+            <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_2.png"
+              alt="image 2"
+            /></a>
+          </div>
+          <div class="item3">
+           <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_3.png"
+              alt="image 3"
+            /></a>
+          </div>
+          <div class="item4">
+           <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_4.png"
+              alt="image 4"
+            /></a>
+          </div>
+          <div class="item5">
+           <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_5.png"
+              alt="image 5"
+            /></a>
+          </div>
+          <div class="item6">
+           <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_6.png"
+              alt="image 6"
+            /></a>
+          </div>
+          <div class="item7">
+           <a >  <img
+              class="grid-image"
+              src="images/images_noticias/NoticiasInter_7.png"
+              alt="image 7"
+            /></a>
+          </div>
+        </div>
+      </div>
+  <!-- Ventana emergente para mostrar detalles de la noticia -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="close-popup" class="close-btn">&times;</span>
+    <h2 id="popup-title"></h2>
+    <p id="popup-description"></p>
+    <button id="more-info-btn">Más información</button>
+  </div>
+</div>  
+  </div>
+   
+  </body>
+</html>

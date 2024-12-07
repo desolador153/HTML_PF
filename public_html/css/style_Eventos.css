@@ -1,0 +1,259 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 06/12/2024, 11:33:04 PM
+    Author     : Oscar
+*/
+
+.navBar {
+    --height: 80px;
+
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--height);
+    width: 100%;
+    background-color: black;
+    color: white;
+    z-index: 1000;
+    /* box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.84); */
+    padding: 10px 10%;
+    backdrop-filter: blur(10px);
+    transition: 200ms;
+}
+
+.navBar.scroll {     /*Cuando el usuario hace Scrol la altura de la barra se reduce a 60 px*/
+    --height: 60px;
+
+    height: var(--height);
+    background: white;
+    color: var(--cor-preto);
+
+    & a {
+        color: var(--cor-preto);
+        font-size: 1rem;
+    }
+
+    .navBar-logo a img {
+        filter: invert(1);     /*Invierte los colores de la imagen*/
+        height: 50px;
+    }
+
+    &  .navBar-hamburguer div{
+        background: var(--cor-preto);
+    }
+
+    & .navBar-links.active {
+        background: inherit;
+        box-shadow: none;
+    }
+
+
+}
+
+.navBar-logo {
+    width: 100%;
+    height: auto;
+}
+
+.navBar-logo a img {
+    transition: 200ms;
+    height: 60px;
+}
+
+.navBar-logo a img:hover {
+    transform: scale(1.1);
+}
+
+.navBar-links {
+    display: flex;
+    justify-content: end;
+    list-style: none;   
+    width: 50%;
+    position: relative;
+}
+
+.navBar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: 200ms;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    margin-left: 5px;
+    white-space: nowrap; 
+}
+
+.navBar-links a::after {
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: var(--cor-secundaria);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 200ms ease-in-out;
+    border-radius: 4px;
+}
+
+.navBar-links a:hover::after {
+    width: 100%;
+}
+
+.navBar-links a:hover {
+    background-color: rgba(0, 0, 0, 0.28);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.56);
+    color: var(--cor-secundaria);
+}
+
+/* Menu mobile */
+
+.navBar-hamburguer {
+    cursor: pointer;
+    display: none;
+}
+
+.navBar-hamburguer div {
+    width: 32px;
+    height: 4px;
+    margin: 8px 20px;
+    background-color: white;
+    transition: 300ms;
+    border-radius: 2px;
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 999px) {
+    .navBar {
+        padding: 10px 5%;
+    } 
+
+    .navBar-links {
+        position: absolute;
+        top: var(--height);
+        right: 0%;
+        width: 50%;
+        height: 30vh;
+        background-color: rgba(51, 51, 51, 0.42);
+        box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.84);
+        border-radius: 0 0 0 10px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 300ms ease-in;
+        backdrop-filter: blur(10px);
+    }
+
+    .navBar-links li {
+        opacity: 0;
+    }
+
+    .navBar-links a {
+        margin: 0;
+    }
+
+    .navBar-hamburguer {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .navBar-links {
+        width: 100%;
+    }
+    
+}
+
+/* Animaciones */
+
+.navBar-links.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+.navBar-hamburguer.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.navBar-hamburguer.active .line2 {
+    opacity: 0;
+}
+
+.navBar-hamburguer.active .line3 {
+    transform: rotate(45deg) translate(-8px, -9px);
+}
+
+
+
+
+
+:root {
+  --cor-branco: #fdfdf5;
+  --cor-preto: #1a1a1a;
+  --cor-primaria: #193445;
+  --cor-secundaria: #c08e30;
+  --cor-terciaria: #0D0C1D;
+ 
+}
+
+* > * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+html, body {
+ 
+
+}
+
+/* Ocultar barras de rolagem em navegadores baseados em WebKit */
+html body::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Days One", sans-serif;
+}
+
+* > *:not(h1, h2, h3, h4, h5, h6),
+button,
+a {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 2000px;
+  margin: auto;
+}
+
+
+
+
